@@ -2,32 +2,403 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+/* Nav styles */
+
+.navbar {
+  @apply fixed top-0 left-0 right-0 z-50 p-5 bg-transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.navbar-container {
+  @apply flex justify-between;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.logo-container {
+  @apply flex items-center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.logo-link {
+  @apply cursor-pointer;
+}
+
+.navbar-title {
+  @apply sm:text-lg md:text-2xl font-extrabold ml-[3%] text-[#066145];
+}
+
+.navbar-bg {
+  @apply bg-black bg-opacity-5 w-[40%] rounded-2xl p-2;
+}
+
+.navbar-links {
+  @apply flex justify-end md:space-x-[2%];
+}
+
+.navbar-link {
+  @apply hidden md:flex bg-gray-200 hover:bg-[#066145] rounded-2xl text-black hover:text-white;
+}
+
+.navbar-link-item {
+  @apply flex items-center p-1;
+}
+
+.navbar-link-text {
+  @apply font-semibold p-2 cursor-pointer;
+}
+
+.mobile-menu-button {
+  @apply md:hidden bg-gray-200 hover:bg-[#066145] rounded-2xl text-black hover:text-white;
+}
+
+.mobile-menu-icon {
+  @apply flex items-center p-1;
+}
+
+.mobile-nav {
+  @apply h-full bg-white sm:hidden shadow-lg pb-[5%] pt-[8%] px-[5%] fixed top-0 bottom-0 right-0;
+}
+
+.mobile-nav-header {
+  @apply flex items-center mb-[5%];
+}
+
+.mobile-nav-close {
+  @apply ml-auto text-black active:text-gray-300;
+}
+
+.divider {
+  @apply h-[0.5px] bg-gray-300;
+}
+
+.mobile-nav-links {
+  @apply block p-3 space-y-[10%];
+}
+
+.mobile-nav-link {
+  @apply sm:hidden bg-gray-200 hover:bg-[#066145] rounded-2xl text-black hover:text-white;
+}
+
+.get-started-button {
+  @apply text-white font-bold text-center bg-emerald-600 px-2 py-2 rounded-md shadow-md cursor-pointer hover:bg-emerald-500;
+}
+
+.get-started-container {
+  @apply flex h-full flex-col justify-center mt-[6%];
+}
+
+
+/* Landing page */
+
+/* styles/globals.css */
+
+.bg-bgCover {
+  @apply bg-cover bg-center;
+}
+
+.section-container {
+  @apply m-5 rounded-md h-[25rem] md:h-[30rem] lg:h-[32rem] mt-[28%] md:mt-[10%] relative;
+}
+
+.section-title {
+  @apply font-extrabold text-center sm:text-2xl md:text-3xl py-2 text-[#066145] relative z-10;
+}
+
+.section-coming-soon-subtitle{
+  @apply  text-center font-semibold text-white relative z-10
+}
+
+.section-overlay {
+  @apply absolute inset-0 bg-black opacity-50 rounded-md;
+}
+
+.section-content {
+  @apply relative z-10 p-5;
+}
+
+.section-subtitle {
+  @apply font-bold text-lg text-white sm:text-3xl md:text-5xl text-center p-3 md:mb-[2%];
+}
+
+.section-text {
+  @apply px-[5%] sm:px-[10%] text-white font-semibold text-sm sm:text-xl md:text-2xl text-justify;
+}
+
+.section-images {
+  @apply text-center pt-[16%] md:pt-[5%] md:flex md:items-center md:justify-between md:mx-[3%];
+}
+
+.section-image-container {
+  @apply flex md:items-center;
+}
+
+.section-image-group-sm {
+  @apply sm:hidden relative w-[13rem];
+}
+
+.section-image-group-md {
+  @apply hidden sm:flex relative w-[14rem];
+}
+
+.section-image {
+  @apply absolute w-10  rounded-full overflow-hidden;
+}
+
+.section-image-lg {
+  @apply absolute w-16  rounded-full overflow-hidden;
+}
+
+.section-users-text {
+  @apply sm:mt-[2%] md:mt-[8%] lg:mt-[10%];
+}
+
+.section-users-description {
+  @apply text-sm font-semibold pl-4 sm:pl-1 text-white sm:self-center;
+}
+
+.section-rating {
+  @apply flex items-center pt-[5%];
+}
+
+.section-rating-icon {
+  @apply text-yellow-400;
+}
+
+.section-rating-text {
+  @apply font-semibold pl-3 text-white;
+}
+ 
+
+/* Story */
+
+/* styles/globals.css */
+
+.story-container {
+  @apply bg-white py-10;
+}
+
+.story-grid {
+  @apply sm:grid sm:grid-cols-2 sm:gap-10 md:mx-10 items-center;
+}
+
+.story-text-container {
+  @apply px-3 md:px-5;
+}
+
+.story-title {
+  @apply text-3xl md:text-4xl font-extrabold text-center md:text-left text-gray-800;
+}
+
+.story-text {
+  @apply font-light text-justify md:text-left text-lg p-5 text-gray-600;
+}
+
+.story-image-container {
+  @apply p-2 mx-7 sm:mx-0 sm:p-5;
+}
+
+.story-image {
+  @apply rounded-md shadow-md;
+}
+
+/* Section 1 */
+
+/* styles/globals.css */
+
+.Section1-container {
+  @apply bg-gray-50 py-10;
+}
+
+.Section1-title {
+  @apply font-extrabold text-xl text-emerald-800 sm:text-3xl md:text-4xl md:py-5 text-center;
+}
+
+.Section1-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:mx-10;
+}
+
+.Section1-card {
+  @apply bg-white shadow-lg rounded-md flex flex-col items-center justify-center p-6 h-72 text-center;
+}
+
+.Section1-icon-container {
+  @apply bg-gray-200 inline-block p-2 rounded-full mb-4;
+}
+
+.Section1-card-title {
+  @apply font-bold text-lg text-emerald-800;
+}
+
+.Section1-card-subtitle {
+  @apply font-semibold text-gray-400 mb-2;
+}
+
+.Section1-card-description {
+  @apply font-light text-gray-600;
+}
+
+.Section1-extra-cards-container {
+  @apply flex justify-center mt-6;
+}
+
+.Section1-extra-card {
+  @apply bg-white shadow-lg rounded-md flex flex-col items-center justify-center p-6 h-72 w-80 mx-2 text-center;
+}
+
+/* Process Map */
+/* styles/globals.css */
+
+.ProcessMap-container {
+  @apply bg-gray-50 py-10 px-5 md:px-20;
+}
+
+.ProcessMap-title {
+  @apply font-extrabold text-xl text-emerald-800 sm:text-3xl md:text-4xl md:py-5 text-center;
+}
+
+.ProcessMap-steps {
+  @apply flex flex-col items-center space-y-10 mt-10;
+}
+
+.ProcessMap-step {
+  @apply bg-white shadow-lg rounded-md p-6 w-full md:w-3/4 flex flex-col items-center text-center;
+}
+
+.ProcessMap-icon-container {
+  @apply bg-gray-200 inline-block p-4 rounded-full mb-4;
+}
+
+.ProcessMap-step-title {
+  @apply font-bold text-lg text-emerald-800 mb-2;
+}
+
+.ProcessMap-step-subtitle {
+  @apply font-semibold text-gray-600 mb-2;
+}
+
+.ProcessMap-step-description {
+  @apply font-light text-gray-600 mb-4;
+}
+
+.ProcessMap-step-points {
+  @apply font-light text-gray-600 text-left list-disc list-inside;
+}
+
+
+/* Pricing Styles */
+/* styles/globals.css */
+
+.Pricing-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:space-x-[7%] lg:space-x-[10%] m-10 lg:m-20;
+}
+
+.Pricing-plan {
+  @apply bg-white shadow-lg rounded-lg overflow-hidden my-[4%];
+}
+
+.Pricing-plan-title {
+  @apply text-center font-bold text-xl md:text-2xl p-2 bg-emerald-600 text-white rounded-t-lg;
+}
+
+.Pricing-plan-price {
+  @apply text-center flex justify-center py-3;
+}
+
+.Pricing-plan-price-text {
+  @apply font-bold text-3xl;
+}
+
+.Pricing-plan-price-unit {
+  @apply flex items-end text-gray-400;
+}
+
+.Pricing-plan-subscribe {
+  @apply text-center py-5;
+}
+
+.Pricing-plan-subscribe-button {
+  @apply px-4 py-3 text-white font-semibold rounded-full bg-emerald-800 cursor-pointer hover:bg-emerald-700;
+}
+
+.Pricing-plan-divider {
+  @apply border border-gray-300 my-3;
+}
+
+.Pricing-plan-feature {
+  @apply flex items-center space-x-[3%] m-5;
+}
+
+.Pricing-plan-feature-icon {
+  @apply bg-gray-300 rounded-full p-1;
+}
+
+.Pricing-plan-feature-unavailable {
+  @apply line-through text-gray-300;
+}
+
+/* Testimonials */
+
+/* styles/global.css */
+
+.section4-container {
+  @apply w-full bg-emerald-800 mt-[3%] relative flex flex-col items-center;
+}
+
+.section4-heading {
+  @apply text-4xl font-extrabold text-center py-5 text-white;
+}
+
+.section4-wrapper {
+  @apply relative flex flex-col items-center w-full md:max-w-2xl lg:max-w-full pb-[67%] lg:pb-[17%];
+}
+
+.testimonial-item {
+  @apply absolute inset-0 transition-opacity duration-500;
+}
+
+.testimonial-content {
+  @apply relative flex items-center p-5 lg:mx-[5%];
+}
+
+.testimonial-quote {
+  @apply text-white md:hidden;
+}
+
+.testimonial-quote-large {
+  @apply text-white hidden md:flex;
+}
+
+.testimonial-image {
+  @apply rounded-full w-[7rem] h-[7rem] mb-4;
+}
+
+.testimonial-feedback {
+  @apply text-white md:text-2xl font-semibold text-justify;
+}
+
+.testimonial-name {
+  @apply text-white md:text-xl text-lg font-extrabold pt-2;
+}
+
+.testimonial-title {
+  @apply text-white md:text-lg text-sm font-semibold;
+}
+
+.testimonial-rating {
+  @apply flex pt-2;
+}
+
+.testimonial-button-container {
+  @apply flex justify-center items-center z-20 space-x-2 p-2 mt-10 pb-[2%];
+}
+
+.testimonial-button {
+  @apply focus:outline-none;
+}
+
+.testimonial-button-active {
+  @apply text-green-500;
+}
+
+.testimonial-button-inactive {
+  @apply text-white;
 }
